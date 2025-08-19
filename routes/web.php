@@ -2,4 +2,4 @@
 
 use App\Core\Router;
 
-Router::get('/home', 'HomeController@homeView');
+Router::get('/', 'HomeController@homeView');
