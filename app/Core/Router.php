@@ -76,9 +76,9 @@ class Router
 
             $instance = new $controller;
 
-            if (!method_exists($instance, $method)) {
+            if (!method_exists($instance, $handler)) {
                 http_response_code(500);
-                echo "Method $method NOT FOUND";
+                echo "Method $handler NOT FOUND";
                 return;
             }
 
