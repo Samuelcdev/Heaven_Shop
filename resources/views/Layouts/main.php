@@ -5,12 +5,17 @@
     <meta charset="UTF-8">
     <title><?= $title ?? 'Heaven Shop' ?></title>
     <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
-<body class="bg-gray-100">
-    <main class="p-6">
-        <?= $content ?? '' ?>
-    </main>
+<body>
+    <?php
+    require_once BASE_PATH . "/resources/views/Components/header.php";
+    ?>
+    <?= $content ?? '' ?>
+    <?php
+    require_once BASE_PATH . "/resources/views/Components/footer.php";
+    ?>
 </body>
 
 </html>
