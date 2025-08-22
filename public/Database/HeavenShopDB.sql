@@ -8,7 +8,7 @@ USE heavenshopdb;
 -- =========================
 -- DELETE TABLES
 -- =========================
-DROP TABLE IF EXISTS `products`, `categories`, `variants`, `users`;
+DROP TABLE IF EXISTS `products`, `categories`, `variants`;
 
 -- =========================
 -- TABLE: products
@@ -41,16 +41,6 @@ CREATE TABLE variants (
     stock_variant INT NOT NULL DEFAULT 0,
     price_variant DECIMAL(10, 2) NOT NULL, 
     id_product INT(11) NOT NULL
-);
-
--- =========================
--- TABLE: users
--- =========================
-CREATE TABLE users (
-    id_user INT(11) PRIMARY KEY AUTO_INCREMENT,
-    name_user VARCHAR(150) NOT NULL,
-    email_user VARCHAR(150) NOT NULL,
-    password_user VARCHAR(255) NOT NULL
 );
 
 -- =========================
