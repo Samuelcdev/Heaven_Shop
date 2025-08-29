@@ -92,7 +92,7 @@ class Router
 
     private static function normalize(string $uri)
     {
-        $uri = '/' . ltrim($uri, '/');
+        $uri = '/' . ltrim(strtolower($uri), '/');
         return rtrim($uri, '/') ?: '/';
     }
 }
