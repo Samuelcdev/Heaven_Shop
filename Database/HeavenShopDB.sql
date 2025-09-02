@@ -18,7 +18,11 @@ CREATE TABLE products (
     name_product VARCHAR(150) NOT NULL,
     description_product TEXT,
     status_product ENUM('Active', 'Inactive') DEFAULT 'Active',
-    price_product DECIMAL(10, 2) NOT NULL,
+    color_product VARCHAR(50),
+    size_product VARCHAR(50),
+    stock_product INT NOT NULL DEFAULT 0,
+    price_product DECIMAL(10, 2) NOT NULL, 
+    image_product VARCHAR(255),
     id_category INT(11) NOT NULL
 );
 
@@ -29,18 +33,6 @@ CREATE TABLE categories (
     id_category INT PRIMARY KEY AUTO_INCREMENT,
     name_category VARCHAR(100) NOT NULL,
     description_category TEXT
-);
-
--- =========================
--- TABLE: variants
--- =========================
-CREATE TABLE variants (
-    id_variant INT(11) PRIMARY KEY AUTO_INCREMENT,
-    color_variant VARCHAR(50),
-    size_variant VARCHAR(50),
-    stock_variant INT NOT NULL DEFAULT 0,
-    price_variant DECIMAL(10, 2) NOT NULL, 
-    id_product INT(11) NOT NULL
 );
 
 -- =========================

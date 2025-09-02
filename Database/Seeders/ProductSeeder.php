@@ -24,12 +24,18 @@ class ProductSeeder
                     name_product, 
                     description_product, 
                     status_product,
+                    color_product,
+                    size_product,
+                    stock_product,
                     price_product,
                     id_category
                     ) VALUES (
                     :name_product,
                     :description_product,
                     :status_product,
+                    :color_product,
+                    :size_product,
+                    :stock_product,
                     :price_product,
                     :id_category
                     );";
@@ -41,6 +47,9 @@ class ProductSeeder
                 ':name_product' => $faker->words(3, true),
                 ':description_product' => $faker->sentence(12),
                 ':status_product' => $faker->randomElement(['Active', 'Inactive']),
+                ':color_product' => $faker->colorName(),
+                ':size_product' => $faker->randomElement(['S', 'M', 'L', 'XL']),
+                ':stock_product' => $faker->numberBetween(0, 100),
                 ':price_product' => $faker->numberBetween(2000, 90000),
                 ':id_category' => $faker->numberBetween(1, 5)
             ]);
