@@ -8,7 +8,7 @@ USE heavenshoptestdb;
 -- =========================
 -- DELETE TABLES
 -- =========================
-DROP TABLE IF EXISTS `products`, `categories`, `variants`;
+DROP TABLE IF EXISTS `products`, `categories`;
 
 -- =========================
 -- TABLE: products
@@ -41,9 +41,4 @@ CREATE TABLE categories (
 ALTER TABLE products 
 ADD CONSTRAINT fk_products_categories
 FOREIGN KEY (id_category) REFERENCES categories(id_category) 
-ON DELETE RESTRICT ON UPDATE CASCADE;
-
-ALTER TABLE variants
-ADD CONSTRAINT fk_variants_products
-FOREIGN KEY (id_product) REFERENCES products(id_product)
 ON DELETE RESTRICT ON UPDATE CASCADE;
